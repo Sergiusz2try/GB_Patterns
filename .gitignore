@@ -1,0 +1,7 @@
+# Enviroment files
+venv
+
+# VSC
+.idea
+.git
+__pycache__
