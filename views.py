@@ -1,4 +1,5 @@
 from datetime import date
+from patterns.behavioral_patterns import EmailNotifier, SmsNotifier
 from patterns.structural_patterns import AppRoute, Debug
 from simple_fw.renderer import render
 from patterns.creational_patterns import Engine, Logger
@@ -6,6 +7,8 @@ from patterns.creational_patterns import Engine, Logger
 
 site = Engine()
 logger = Logger("main")
+email_notifier = EmailNotifier()
+sms_notifier = SmsNotifier()
 
 routes = {}
 
