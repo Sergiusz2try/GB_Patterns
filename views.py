@@ -1,14 +1,17 @@
 from datetime import date
+from patterns.architectural_system_pattern_unit_of_work import UnitOfWork
 from patterns.behavioral_patterns import EmailNotifier, SmsNotifier
 from patterns.structural_patterns import AppRoute, Debug
 from simple_fw.renderer import render
-from patterns.creational_patterns import Engine, Logger
+from patterns.creational_patterns import Engine, Logger, MapperRegistry
 
 
 site = Engine()
 logger = Logger("main")
 email_notifier = EmailNotifier()
 sms_notifier = SmsNotifier()
+UnitOfWork.new_current()
+UnitOfWork.get_current().set_mapper_registry(MapperRegistry)
 
 routes = {}
 
